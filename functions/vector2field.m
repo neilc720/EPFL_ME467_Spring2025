@@ -5,7 +5,7 @@
 %%% INPUTS ----------------------------------------------------------------
 %   v       state vector (column vector of real numbers)
 %   N       spatial resolution
-%	symm    center symmetry (true/false boolean)
+%   symm    center symmetry (true/false boolean)
 
 
 %%% OUTPUTS ---------------------------------------------------------------
@@ -13,7 +13,7 @@
 
 
 %%% REMARKS ---------------------------------------------------------------
-%	1-  In forward integration of the KSE, the mean remains constant.
+%   1-  In forward integration of the KSE, the mean remains constant.
 %       We assume the mean value is always zero, hence the mean value of
 %       'u' is zero by construction.
 %   2-  We do not fill the padded elements in Fourier space, hence no
