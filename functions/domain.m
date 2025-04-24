@@ -9,7 +9,7 @@
 
 %%% OUTPUTS ---------------------------------------------------------------
 %   x   column vector of grid points
-% 	k   column vector of wave numbers
+%   k   column vector of wave numbers
 
 
 function [x,k] = domain(L,N)
