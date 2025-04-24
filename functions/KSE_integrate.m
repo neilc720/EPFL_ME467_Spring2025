@@ -7,7 +7,7 @@
 %   v0          initial condition (column state vector)
 %   T           integration time
 %   dt_ref      reference time step size
-%   dt_store    time intervals of storing (set to 0 to save 'u(T)' only)
+%   dt_store    time intervals of storing (set to 0 to save 'v(T)' only)
 %   L           domain length
 %   N           spatial resolution
 %   symm        center symmetry (true/false boolean)
@@ -66,7 +66,7 @@ function [snapshots,t_vec] = KSE_integrate(v0,T,dt_ref,dt_store,L,N,symm)
     end
     
     snapshots = zeros(length(v0),Nt);
-    snapshots(:,1) = field2vector(ifft(U,'symmetric'),N,symm);
+    snapshots(:,1) = v0;
     
     t_vec = zeros(Nt,1);
     t_vec(1) = 0;

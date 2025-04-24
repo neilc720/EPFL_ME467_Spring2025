@@ -13,7 +13,7 @@
 
 
 %%% OUTPUTS ---------------------------------------------------------------
-%   J       Jacobian matrix
+%   J           Jacobian matrix
 
 
 function J = Jacobian(v0,t,epsilon,dt,L,N,symm)

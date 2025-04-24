@@ -3,7 +3,7 @@
 
 
 %%% INPUTS ----------------------------------------------------------------
-%   v0      guessed periodic point (state vector)
+%   v0      guessed periodic point (column state vector)
 %   T       guessed period of the PO
 %   dt      reference time step for the required time marchings
 %   L       domain length
@@ -12,7 +12,7 @@
 
 
 %%% OUTPUTS ---------------------------------------------------------------
-%   v_best  exact periodic point (state vector)
+%   v_best  exact periodic point (column state vector)
 % 	T_best  exact period of the PO
 
 
