@@ -37,7 +37,7 @@ for i = 1:N_norm
     if(rem(i,10)==0)           % update figure every 10 re-normalizations
         clf; grid on; hold on
         for q = 1:N_exp
-            plot(t(q:i),X(q,1:i),'LineWidth',2)
+            plot(t(1:i),X(q,1:i),'LineWidth',2)
         end
         drawnow
     end
