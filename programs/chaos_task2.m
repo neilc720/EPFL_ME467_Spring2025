@@ -34,11 +34,12 @@ for i = 1:N_norm
     
     [v0,~] = KSE_integrate(v0,tau,dt,0,L,N,symm);
     
-    if(rem(i,10)==0)           % update figure every 10 re-normalizations
+    if(rem(i,20)==0)           % update figure every 20 re-normalizations
         clf; grid on; hold on
         for q = 1:N_exp
             plot(t(1:i),X(q,1:i),'LineWidth',2)
         end
+        xlabel('t'); ylabel('\chi_i')
         drawnow
     end
 end
