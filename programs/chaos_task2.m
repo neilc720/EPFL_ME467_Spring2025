@@ -17,4 +17,28 @@ u0 = sin(2.0*pi*x/L) ...
     + cos(4.0*pi*x/L);         % initial condition in physical state
 v0 = field2vector(u0,N,symm);  % initial state vector
 
-%% to be completed...
+%% compute Lyapunov exponents
+Q = zeros(length(v0),N_exp);   % allocate matrix of orthonormal vectors
+for i = 1:N_exp
+    Q(i,i) = 1;                % initialize orthonormal vectors
+end
+
+X = zeros(N_exp,N_norm);       % allocate matrix of Lyapunov exp. history
+t = zeros(N_norm,1);           % allocate vector of normalization instances
+
+figure
+for i = 1:N_norm
+    J = Jacobian(v0,tau,epsilon,dt,L,N,symm);
+    
+    %%% to be completed
+    
+    [v0,~] = KSE_integrate(v0,tau,dt,0,L,N,symm);
+    
+    if(rem(i,10)==0)           % update figure every 10 re-normalizations
+        clf; grid on; hold on
+        for q = N_exp
+            plot(t(q:i),X(q,1:i),'LineWidth',2)
+        end
+        drawnow
+    end
+end
