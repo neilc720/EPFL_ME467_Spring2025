@@ -18,22 +18,3 @@ u0 = sin(2.0*pi*x/L) ...
 v0 = field2vector(u0,N,symm);  % initial state vector
 
 %% to be completed...
-
-
-
-
-
-
-
-
-
-
-
-
-%% perturbing the state vector
-r = zeros(size(v1000));        % the perturbation vector
-for k = 1:length(r)
-    %%% to be completed
-end
-
-%%% to be completed
