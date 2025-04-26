@@ -13,7 +13,7 @@
 
 %%% OUTPUTS ---------------------------------------------------------------
 %   v_best  exact periodic point (column state vector)
-% 	T_best  exact period of the PO
+%   T_best  exact period of the PO
 
 
 function [v_best,T_best] = search4PO(v0,T,dt,L,N,symm)
