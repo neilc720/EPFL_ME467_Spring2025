@@ -14,9 +14,9 @@
 %%% OUTPUTS ---------------------------------------------------------------
 %   v_best  exact periodic point (column state vector)
 %   T_best  exact period of the PO
+%   flag    flag == 1: search successful, otherwise: search failed
 
-
-function [v_best,T_best] = search4PO(v0,T,dt,L,N,symm)
+function [v_best,T_best,flag] = search4PO(v0,T,dt,L,N,symm)
     [~,k] = domain(L,N);
     U0 = fft(vector2field(v0,N,symm));
     
@@ -31,10 +31,6 @@ function [v_best,T_best] = search4PO(v0,T,dt,L,N,symm)
     
     options = optimoptions('fsolve','Display','iter','MaxIterations',75);
     [S,~,flag,~] = fsolve(@(X) recurrence(X),[v0;T],options);
-    
-    if flag ~= 1
-        error('Search for unstable periodic orbit failed...');
-    end
     
     v_best = S(1:end-1);
     T_best = S(end);

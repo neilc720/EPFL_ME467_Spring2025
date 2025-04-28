@@ -13,15 +13,12 @@
 
 %%% OUTPUTS ---------------------------------------------------------------
 %   v_best  exact equilibrium solution (column state vector)
+%   flag    flag == 1: search successful, otherwise: search failed
 
 
-function v_best = search4EQ(v0,T,dt,L,N,symm)
+function [v_best,flag] = search4EQ(v0,T,dt,L,N,symm)
     options = optimoptions('fsolve','Display','iter','MaxIterations',75);
     [v_best,~,flag,~] = fsolve(@(X) recurrence(X),v0,options);
-    
-    if flag ~= 1
-        error('Search for equilibrium solution failed...');
-    end
     
     function f = recurrence(v)
         [vT,~] = KSE_integrate(v,T,dt,0,L,N,symm);
