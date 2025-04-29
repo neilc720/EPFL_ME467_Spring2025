@@ -20,7 +20,7 @@ v0 = field2vector(u0,N,symm);  % initial state vector
 [v1000,~] = KSE_integrate(v0,T_trans,dt,0,L,N,symm);
 
 %% perturbing the state vector
-r = zeros(size(v1000));        % the perturbation vector
+r = zeros(size(v1000));        % the perturbation vector memory allocation
 for k = 1:length(r)
     %%% to be completed
 end
