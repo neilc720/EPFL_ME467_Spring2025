@@ -32,6 +32,7 @@ for i = 1:N_norm
     %%% to be completed
     
     [v0,~] = KSE_integrate(v0,tau,dt,0,L,N,symm);
+    t(i) = i*tau;
     
     if(rem(i,20)==0)           % update figure every 20 re-normalizations
         clf; grid on; hold on
