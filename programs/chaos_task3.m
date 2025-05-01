@@ -24,7 +24,7 @@ v0 = field2vector(u0,N,symm);  % initial state vector
 snapshots = [0,0,0,0,0,0];     % Modify the set of snapshot numbers. Do NOT
                                % use the rand or randi command to select
                                % snapshots from the trajectory; choose six 
-                               % arbitrarily numbers yourself. 
+                               % arbitrary numbers yourself. 
 
 %%% to be completed
 
